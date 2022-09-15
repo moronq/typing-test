@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { doubleSpaceCheck } from '../../utils/doubleSpaceCheck'
 import { fetchText } from './textAction'
 
 interface ITextState {
@@ -20,7 +21,7 @@ export const textSlice = createSlice({
       state.error = null
     },
     [fetchText.fulfilled.type]: (state, action: PayloadAction<string>) => {
-      state.text = action.payload.split('')
+      state.text = doubleSpaceCheck(action.payload.split(''))
     },
     [fetchText.rejected.type]: (state, action: PayloadAction<string>) => {
       state.error = action.payload
