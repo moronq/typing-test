@@ -1,4 +1,5 @@
 import React, { Dispatch, FC, SetStateAction, useRef } from 'react'
+import styles from './Input.module.scss'
 
 interface IProps {
   value: string
@@ -21,6 +22,7 @@ const Input: FC<IProps> = ({ value, onChange }) => {
       onBlur={(e) => onBlur(e)}
       value={value}
       onChange={(e) => onChange(e)}
+      className={styles.input}
     />
   )
 }
