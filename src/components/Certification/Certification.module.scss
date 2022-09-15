@@ -1,0 +1,18 @@
+.mainContainer {
+  width: 900px;
+  padding: 15px;
+  height: 300px;
+  margin: auto;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.5rem;
+}
+
+.active {
+  padding: 5px 3px;
+  background-color: goldenrod;
+  color: white;
+  border-radius: 3px;
+}
