@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { stat } from 'fs'
 import { textAPI } from '../../api/api'
+import { store } from '../store'
 
 export const fetchText = createAsyncThunk(
   'text/fetchText',

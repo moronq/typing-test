@@ -1,0 +1,13 @@
+.textContainer {
+  flex-grow: 1;
+}
+.active {
+  padding: 5px 3px;
+  background-color: goldenrod;
+  color: white;
+  border-radius: 3px;
+}
+
+.incorrectLetter {
+  background-color: red;
+}

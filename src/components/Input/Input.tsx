@@ -1,13 +1,13 @@
-import React, { Dispatch, FC, SetStateAction, useRef } from 'react'
+import React, { Dispatch, FC, SetStateAction, useRef, useState } from 'react'
 import styles from './Input.module.scss'
 
 interface IProps {
-  value: string
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Input: FC<IProps> = ({ value, onChange }) => {
+const Input: FC<IProps> = ({ onChange }) => {
   const ref = useRef<HTMLInputElement>(null)
+  const [value, setValue] = useState('')
 
   const onBlur = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     ref.current?.focus()

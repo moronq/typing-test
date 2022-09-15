@@ -13,12 +13,6 @@
   display: flex;
 }
 
-.active {
-  padding: 5px 3px;
-  background-color: goldenrod;
-  color: white;
-  border-radius: 3px;
-}
 .taskAreaContainer {
   display: flex;
   gap: 40px;
@@ -35,12 +29,4 @@
   flex-direction: column;
   justify-content: center;
   border: 1px solid red;
-}
-
-.textContainer {
-  flex-grow: 1;
-}
-
-.incorrectLetter {
-  background-color: red;
 }
