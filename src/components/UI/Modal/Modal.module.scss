@@ -1,0 +1,31 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  z-index: 2;
+}
+
+.modalBlock {
+  width: 700px;
+  height: 300px;
+  background-color: white;
+  margin: auto;
+  border-radius: 20px;
+  padding: 25px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 40px;
+  line-height: 3rem;
+}
+
+.hidden {
+  display: none;
+}

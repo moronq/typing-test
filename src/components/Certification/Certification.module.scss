@@ -6,11 +6,11 @@
   margin: auto;
   border-radius: 20px;
   background-color: white;
+  position: relative;
+  display: flex;
   font-size: 1.2rem;
   letter-spacing: 0.05rem;
   line-height: 1.8rem;
-  position: relative;
-  display: flex;
 }
 
 .taskAreaContainer {
@@ -29,4 +29,8 @@
   flex-direction: column;
   justify-content: center;
   border: 1px solid red;
+}
+
+.restartButton {
+  padding: 5px 15px;
 }

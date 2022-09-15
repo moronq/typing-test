@@ -1,0 +1,15 @@
+.myButton {
+  background-color: lightgoldenrodyellow;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: auto;
+  border: 1px solid orange;
+}
+
+.myButton:active {
+  background-color: goldenrod;
+}
+.myButton:focus {
+  outline: 2px solid red;
+}
