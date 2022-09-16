@@ -1,14 +1,21 @@
-import { Dispatch, FC, SetStateAction } from 'react'
+import { FC } from 'react'
 import Modal from '../UI/Modal/Modal'
 import MyButton from '../UI/MyButton/MyButton'
 
 interface IProps {
-  setHelloModal: Dispatch<SetStateAction<boolean>>
+  setIsModalVisual: React.Dispatch<
+    React.SetStateAction<{
+      helloModal: boolean
+      upperCaseModal: boolean
+      finishModal: boolean
+      languageModal: boolean
+    }>
+  >
 }
 
-const ModalHelloMessage: FC<IProps> = ({ setHelloModal }) => {
+const ModalHelloMessage: FC<IProps> = ({ setIsModalVisual }) => {
   const closeHelloModal = () => {
-    setHelloModal(false)
+    setIsModalVisual((prev) => ({ ...prev, helloModal: false }))
   }
   return (
     <Modal>
