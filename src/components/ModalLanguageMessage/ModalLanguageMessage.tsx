@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAppDispatch } from '../../hooks/redux'
 import { restart } from '../../store/slices/textSlice'
 import Modal from '../UI/Modal/Modal'

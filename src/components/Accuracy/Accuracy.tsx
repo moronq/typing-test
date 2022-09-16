@@ -1,7 +1,8 @@
-import React, { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react'
+import accuracyImage from '../../assets/img/accuracy.svg'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { setAccuracy } from '../../store/slices/textSlice'
-import accuracyImage from '../../assets/img/accuracy.svg'
+import { findPercent } from '../../utils/findPercent'
 import styles from './Accuracy.module.scss'
 
 interface IProps {
@@ -12,9 +13,7 @@ interface IProps {
 const Accuracy: FC<IProps> = ({ totalAttemptCount, correctAttemptCount }) => {
   const { text } = useAppSelector((state) => state.text)
   const dispatch = useAppDispatch()
-  const accuracy = +(
-    +(correctAttemptCount / totalAttemptCount).toFixed(3) * 100
-  ).toFixed(1)
+  const accuracy = findPercent(correctAttemptCount, totalAttemptCount)
   useEffect(() => {
     if (correctAttemptCount === text.length) {
       dispatch(setAccuracy(accuracy))

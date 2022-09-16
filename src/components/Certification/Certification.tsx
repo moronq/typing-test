@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import restartImage from '../../assets/img/restart.svg'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { fetchText } from '../../store/slices/textAction'
 import {
@@ -18,7 +19,6 @@ import ModalUpperCaseMessage from '../ModalUpperCaseMessage/ModalUpperCaseMessag
 import Text from '../Text/Text'
 import TypingSpeed from '../TypingSpeed/TypingSpeed'
 import styles from './Certification.module.scss'
-import restartImage from '../../assets/img/restart.svg'
 
 const Certification = () => {
   const dispatch = useAppDispatch()
@@ -45,17 +45,18 @@ const Certification = () => {
       setLanguageModale(false)
     }
   }, [reloaded, dispatch])
+
   useEffect(() => {
     if (numberOfSymbol === text.length && text.length !== 0) {
       setFinishModal(true)
     }
   }, [numberOfSymbol])
 
-  const currentSymbol = text[numberOfSymbol]
-
   const onRestart = () => {
     dispatch(restart())
   }
+
+  const currentSymbol = text[numberOfSymbol]
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target.value
@@ -80,33 +81,32 @@ const Certification = () => {
     }
   }
 
-  const modalStatus = helloModal || upperCaseModal || finishModal
+  const modalStatus =
+    helloModal || upperCaseModal || finishModal || languageModal
 
   return (
     <main className={styles.mainContainer}>
       {modalStatus || <Input onChange={onChange} />}
       <div className={styles.taskAreaContainer}>
-        <Text
-          incorrectSymbol={incorrectSymbol}
-          numberOfSymbol={numberOfSymbol}
-          text={text}
-        />
+        {text.length === 0 ? (
+          <p className={styles.loader}>Loading...</p>
+        ) : (
+          <Text
+            incorrectSymbol={incorrectSymbol}
+            numberOfSymbol={numberOfSymbol}
+            text={text}
+          />
+        )}
         <div className={styles.statsBlock}>
-          <div className={styles.typingSpeedContainer}>
-            <TypingSpeed />
-          </div>
-          <div>
-            <Accuracy
-              correctAttemptCount={numberOfSymbol}
-              totalAttemptCount={totalAttemptCounter}
-            />
-          </div>
-          <div>
-            <button className={styles.restartButton} onClick={onRestart}>
-              <img src={restartImage} alt="restart" width={'20px'} />
-              Заново
-            </button>
-          </div>
+          <TypingSpeed />
+          <Accuracy
+            correctAttemptCount={numberOfSymbol}
+            totalAttemptCount={totalAttemptCounter}
+          />
+          <button className={styles.restartButton} onClick={onRestart}>
+            <img src={restartImage} alt="restart" width={'20px'} />
+            Заново
+          </button>
         </div>
       </div>
       {helloModal && <ModalHelloMessage setHelloModal={setHelloModal} />}

@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import Modal from '../UI/Modal/Modal'
 import MyButton from '../UI/MyButton/MyButton'
 

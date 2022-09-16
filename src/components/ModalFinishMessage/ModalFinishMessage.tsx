@@ -1,11 +1,10 @@
-import React from 'react'
+import accuracyImage from '../../assets/img/accuracy.svg'
+import speedImage from '../../assets/img/speed.svg'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { restart } from '../../store/slices/textSlice'
 import Modal from '../UI/Modal/Modal'
 import MyButton from '../UI/MyButton/MyButton'
 import styles from './ModalFinishMessage.module.scss'
-import speedImage from '../../assets/img/speed.svg'
-import accuracyImage from '../../assets/img/accuracy.svg'
 
 const ModalFinishMessage = () => {
   const { accuracy, speed } = useAppSelector((state) => state.text)
@@ -13,6 +12,9 @@ const ModalFinishMessage = () => {
   const onClick = () => {
     dispatch(restart())
   }
+
+  const accuracyVisual = accuracy ? accuracy : '---'
+  const speedVisual = speed ? speed : '---'
 
   return (
     <Modal>
@@ -22,20 +24,20 @@ const ModalFinishMessage = () => {
         <div className={styles.statsBlock}>
           <div className={styles.accuracy}>
             <div className={styles.accuracyTitle}>
-              <img src={accuracyImage} alt="accuracy" />
+              <img src={accuracyImage} alt="accuracy" width={'15px'} />
               <p>Точность печати:</p>
             </div>
             <p className={styles.value}>
-              <span>{accuracy}</span> %
+              <span>{accuracyVisual}</span> %
             </p>
           </div>
           <div className={styles.speed}>
             <div className={styles.speedTitle}>
-              <img src={speedImage} alt="speed" />
+              <img src={speedImage} alt="speed" width={'22px'} />
               <p>Cкорость печати:</p>
             </div>
             <p className={styles.value}>
-              <span>{speed}</span> зн./мин
+              <span>{speedVisual}</span> зн./мин
             </p>
           </div>
         </div>

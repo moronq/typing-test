@@ -1,9 +1,9 @@
-import React, { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react'
+import speedImage from '../../assets/img/speed.svg'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import useTimer from '../../hooks/useTimer'
 import { setSpeed } from '../../store/slices/textSlice'
 import { convertSecondToMinute } from '../../utils/convertSecondToMinute'
-import speedImage from '../../assets/img/speed.svg'
 import styles from './TypingSpeed.module.scss'
 
 const TypingSpeed: FC = () => {

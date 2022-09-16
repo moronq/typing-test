@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react'
+import React, { FC, useRef } from 'react'
 import styles from './MyButton.module.scss'
 
 interface IProps {

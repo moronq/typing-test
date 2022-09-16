@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from 'react'
+import { FC, ReactNode } from 'react'
 import styles from './Modal.module.scss'
 
 interface IProps {

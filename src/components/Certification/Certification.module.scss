@@ -20,6 +20,8 @@
   height: 100%;
   margin-top: auto;
   margin-bottom: auto;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .statsBlock {
@@ -29,6 +31,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 30px;
+  flex-grow: 0;
 }
 
 .restartButton {
@@ -38,4 +41,9 @@
   color: goldenrod;
   display: flex;
   gap: 10px;
+}
+.loader {
+  width: auto;
+  display: flex;
+  margin: auto;
 }
