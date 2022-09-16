@@ -3,6 +3,8 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import useTimer from '../../hooks/useTimer'
 import { setSpeed } from '../../store/slices/textSlice'
 import { convertSecondToMinute } from '../../utils/convertSecondToMinute'
+import speedImage from '../../assets/img/speed.svg'
+import styles from './TypingSpeed.module.scss'
 
 const TypingSpeed: FC = () => {
   const { numberOfSymbol, text } = useAppSelector((state) => state.text)
@@ -16,7 +18,18 @@ const TypingSpeed: FC = () => {
   const speed = Math.round(numberOfSymbol / convertSecondToMinute(timer))
   let visualSpeed =
     speed.toString() == 'NaN' ? 0 : speed === Infinity ? 0 : speed
-  return <div>{visualSpeed} зн./мин</div>
+  return (
+    <div className={styles.speedContainer}>
+      <p className={styles.speedText}>
+        <img src={speedImage} alt="speed" width={'24px'} />
+        СКОРОСТЬ
+      </p>
+      <p className={styles.speedValue}>
+        {visualSpeed}
+        <span> ЗН./МИН</span>
+      </p>
+    </div>
+  )
 }
 
 export default TypingSpeed

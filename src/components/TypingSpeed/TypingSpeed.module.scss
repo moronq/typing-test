@@ -1,0 +1,19 @@
+.speedText {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 5px;
+}
+
+.speedContainer {
+  font-size: 1rem;
+}
+
+.speedValue {
+  font-size: 2rem;
+  color: lightblue;
+  font-weight: 600;
+  & span {
+    font-size: 1.2rem;
+  }
+}

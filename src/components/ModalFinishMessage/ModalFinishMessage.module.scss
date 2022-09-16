@@ -1,4 +1,40 @@
 .textContainer {
   font-size: 1.5rem;
   line-height: 2rem;
+  margin-bottom: -20px;
+}
+.subtitle {
+  font-size: 1.2rem;
+}
+.statsBlock {
+  display: flex;
+  gap: 50px;
+}
+
+.accuracy,
+.speed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  & img {
+    width: 15px;
+  }
+}
+.speed img {
+  width: 22px;
+}
+
+.speedTitle,
+.accuracyTitle {
+  display: flex;
+  font-size: 1.2rem;
+  gap: 5px;
+}
+.value {
+  font-size: 1.2rem;
+  & span {
+    font-size: 2rem;
+    color: lightsalmon;
+  }
 }

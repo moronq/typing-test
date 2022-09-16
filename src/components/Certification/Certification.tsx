@@ -18,6 +18,7 @@ import ModalUpperCaseMessage from '../ModalUpperCaseMessage/ModalUpperCaseMessag
 import Text from '../Text/Text'
 import TypingSpeed from '../TypingSpeed/TypingSpeed'
 import styles from './Certification.module.scss'
+import restartImage from '../../assets/img/restart.svg'
 
 const Certification = () => {
   const dispatch = useAppDispatch()
@@ -102,6 +103,7 @@ const Certification = () => {
           </div>
           <div>
             <button className={styles.restartButton} onClick={onRestart}>
+              <img src={restartImage} alt="restart" width={'20px'} />
               Заново
             </button>
           </div>
